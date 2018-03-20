@@ -64,7 +64,7 @@ document.addEventListener("keydown", function(e){
     else if (e.keyCode === 32) {
       poseBombe();
     }
-  });
+});
 
 
 
@@ -161,4 +161,4 @@ monster.style.top = monster.offsetTop - 50 + "px";
 }
 
 
-setInterval(random, 400); 
+setInterval(random, 400);
