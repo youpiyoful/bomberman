@@ -40,30 +40,5 @@ function poseBombe(){
   bombeElt.style.left = player.offsetLeft + 25 + "px";
   map.appendChild(bombeElt);
 }
-<<<<<<< HEAD
 console.log(array[length]);
 
-=======
-// var Map = new Object();
-// Map['X'] = 'darkgrey';
-// Map['x'] = 'white';
-// Map[' '] = 'black';
-//
-// var MapGrid = 'grey';
-//
-// var MapDimensions = {
-//   w: 10,
-//   h: 10
-// };
-
-
-
-
-
-// var array = [];
-//
-// for (i=0; i < 10; i++){
-//     array.push(i);
-// }
-// console.log(array[length]);
->>>>>>> c4ed980df5d1efe9afe245b10ca0cf11b7114f7a
