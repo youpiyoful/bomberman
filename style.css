@@ -19,8 +19,8 @@ html, body{
   background: blueviolet;
   z-index: 3;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 50px;
+  left: 50px;
   margin: 0;
   padding: 0;
 }
