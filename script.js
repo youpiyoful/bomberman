@@ -99,6 +99,8 @@ function poseBombe(){
   bombeElt.style.left = player.offsetLeft + 12.5 + "px";
   map.appendChild(bombeElt);
 }
+console.log(array[length]);
+
 
 blockEltMaker();
 // <<<<<<< HEAD
