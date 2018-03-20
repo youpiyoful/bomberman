@@ -128,3 +128,35 @@ blockEltMaker();
 // // }
 // // console.log(array[length]);
 // >>>>>>> c4ed980df5d1efe9afe245b10ca0cf11b7114f7a
+
+var monster = document.getElementById("phantom");
+function random() {
+var min = 1;
+var max = 4;
+
+var dir = Math.floor(Math.random() * Math.floor(max));
+var posBlockLeft = monster.offsetLeft / 50;
+var posBlockTop = monster.offsetTop / 50;
+console.log(dir);
+if (dir == 0) {
+if (blockElt[posBlockTop][posBlockLeft + 1] == 1) {
+monster.style.left = monster.offsetLeft + 50 + "px";
+} //DROITE//
+} else if (dir == 1) {
+if (blockElt[posBlockTop][posBlockLeft - 1] == 1) {
+monster.style.left = monster.offsetLeft - 50 + "px";
+} //GAUCHE//
+} else if (dir == 3) {
+if (blockElt[posBlockTop + 1][posBlockLeft] == 1) {
+monster.style.top = monster.offsetTop + 50 + "px";
+} //BAS///
+
+} else if (dir == 2) { //
+if (blockElt[posBlockTop - 1][posBlockLeft] == 1) {
+monster.style.top = monster.offsetTop - 50 + "px";
+} //HAUT//
+}
+}
+
+
+setInterval(random, 400); 
