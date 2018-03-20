@@ -1,4 +1,4 @@
-body{
+html, body{
   margin: 0;
   padding: 0;
   width: 100%;
@@ -7,6 +7,8 @@ body{
   width: 100vw;
   height: 100vh;
   background: lightgreen;
+  margin: 0;
+  padding: 0;
 }
 
 #player1{
@@ -14,6 +16,8 @@ body{
   height: 100px;
   background: blueviolet;
   position: absolute;
+  margin: 0;
+  padding: 0;
 }
 
 #phantom{
@@ -23,7 +27,7 @@ body{
 .bomb{
   width: 50px;
   height: 50px;
-  background-color: red;
+  background-color : red;
   border-radius: 100%;
   position: absolute;
 }
