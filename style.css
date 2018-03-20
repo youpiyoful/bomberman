@@ -4,18 +4,23 @@ html, body{
   width: 100%;
 }
 #container{
-  width: 100vw;
-  height: 100vh;
+  width: 700px;
+  height: 700px;
   background: lightgreen;
-  margin: 0;
+  margin: auto;
   padding: 0;
+  z-index: 1;
+  position: relative;
 }
 
 #player1{
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background: blueviolet;
+  z-index: 3;
   position: absolute;
+  top: 50px;
+  left: 50px;
   margin: 0;
   padding: 0;
 }
@@ -25,9 +30,25 @@ html, body{
 }
 
 .bomb{
+  width: 25px;
+  height: 25px;
+  background-color : red;
+  z-index: 2;
+  border-radius: 100%;
+  position: absolute;
+}
+
+.blockI{
+  background: black;
   width: 50px;
   height: 50px;
-  background-color : red;
-  border-radius: 100%;
+  position: absolute;
+  z-index: 100000;
+}
+
+.block{
+  background: grey;
+  width: 50px;
+  height: 50px;
   position: absolute;
 }
