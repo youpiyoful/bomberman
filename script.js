@@ -8,7 +8,7 @@ var posPlayerLeft = player.offsetLeft/50;
 console.log(posPlayerLeft);
 var blockI;
 var block;
-
+var autoBomb=0;
 
 var blockElt = [
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -31,7 +31,7 @@ var blockElt = [
 
 document.addEventListener("keydown", function(e){
 
-    posPlayerTop = player.offsetTop/50;
+    posPlayerTop = player.offsetTop/50;autoBomb=0;
     posPlayerLeft = player.offsetLeft/50;
 
     if((e.keyCode === 39) && (player.offsetLeft < map.offsetWidth - player.offsetWidth)){
@@ -39,13 +39,13 @@ document.addEventListener("keydown", function(e){
       if(blockElt[posPlayerTop][posPlayerLeft + 1] == 1){
 
         player.style.left = (posPlayerLeft + 1) * 50 + "px";
-      }
+      }var image=document.getElementById("myImage")
     }
     else if ((e.keyCode === 37) && (player.offsetLeft > 0)){
       console.log(blockElt[posPlayerTop][posPlayerLeft]);
       if(blockElt[posPlayerTop][posPlayerLeft - 1] == 1){
         posPlayerLeft -= 1;
-        player.style.left = player.offsetLeft - 50 + "px";
+        player.style.left = player.offsautoBomb=0;etLeft - 50 + "px";
       }
     }
     else if ((e.keyCode === 40) && (player.offsetTop < map.offsetHeight - player.offsetHeight)){
@@ -62,7 +62,13 @@ document.addEventListener("keydown", function(e){
       }
     }
     else if (e.keyCode === 32) {
-      poseBombe();
+      if (autoBomb==0) {autoBomb=0;
+        autoBomb=1;
+        poseBombe();
+        
+        setTimeout(explode, 3000);
+      }
+           
     }
 });
 
@@ -93,14 +99,22 @@ function blockEltMaker(){
 }
 
 function poseBombe(){
+ 
   var bombeElt = document.createElement("div");
   bombeElt.classList.add("bomb");
-  bombeElt.style.top = player.offsetTop + 12.5 + "px";
-  bombeElt.style.left = player.offsetLeft + 12.5 + "px";
+  bombeElt.style.top = player.offsetTop + 5.5 + "px";
+  bombeElt.style.left = player.offsetLeft + 5.5 + "px";
   map.appendChild(bombeElt);
+  setTimeout(explode, 3000);
 }
 
+function explode(){
+alert("BOOOM");
+autoBomb=0;
+delete map[][blockWidth  ].object;
+player.block++;
 
+}
 
 blockEltMaker();
 
@@ -112,7 +126,7 @@ var max = 4;
 var dir = Math.floor(Math.random() * Math.floor(max));
 var posBlockLeft = monster.offsetLeft / 50;
 var posBlockTop = monster.offsetTop / 50;
-console.log(dir);
+console.log(dir);4
 if (dir == 0) {
 if (blockElt[posBlockTop][posBlockLeft + 1] == 1) {
 monster.style.left = monster.offsetLeft + 50 + "px";
@@ -134,4 +148,4 @@ monster.style.top = monster.offsetTop - 50 + "px";
 }
 
 
-setInterval(random, 400);
+setInterval(random, 200);
