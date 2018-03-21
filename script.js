@@ -13,7 +13,7 @@ var autoBomb = 0;
 var blockElt = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0],
-  [0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+  [0, 1, 1 , 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
   [0, 1, 2, 2, 0, 1, 0, 1, 0, 1, 2, 1, 1, 0],
   [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
   [0, 1, 0, 1, 2, 1, 2, 2, 2, 1, 0, 1, 1, 0],
@@ -22,11 +22,11 @@ var blockElt = [
   [0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 0],
   [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0],
   [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
-  [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0],
-  [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0],
+  [0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0],
+  [0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
-blockHeight
+
 
 
 document.addEventListener("keydown", function (e) {
@@ -61,10 +61,9 @@ document.addEventListener("keydown", function (e) {
       autoBomb = 1;
       placeBomb();
       setTimeout(explode, 1000);
+      autoBomb=0;
     }
-    else{
-      autoBomb = 0;
-    }
+      
   }
 });
 
@@ -98,17 +97,18 @@ function placeBomb() {
   bombeElt.style.left = player.offsetLeft + 5.5 + "px";
   map.appendChild(bombeElt);
 
+  
+  
 }
 
 function explode() {
 
-  //bombeElt.classList.remove("bomb");
-  bombeElt.classList.add("boom");
+  bombeElt.classList.remove("bomb"); 
+
   bombeElt.style.top = bombeElt.offsetTop + 5.5 + "px";
   bombeElt.style.left = bombeElt.offsetLeft + 5.5 + "px";
 
-
-  //delete map[posPlayerTop-1][posPlayerLeft];
+  delete map[posPlayerTop-1][posPlayerLeft];
   // delete map[][blockWidth  ].object;
   // player.block++;
 
