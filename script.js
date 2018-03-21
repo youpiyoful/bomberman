@@ -13,7 +13,7 @@ var autoBomb = 0;
 var blockElt = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0],
-  [0, 1, 1 , 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
   [0, 1, 2, 2, 0, 1, 0, 1, 0, 1, 2, 1, 1, 0],
   [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
   [0, 1, 0, 1, 2, 1, 2, 2, 2, 1, 0, 1, 1, 0],
@@ -30,14 +30,8 @@ var blockElt = [
 
 
 document.addEventListener("keydown", function (e) {
-
-<<<<<<< HEAD
-    posPlayerTop = player.offsetTop/50;
-    posPlayerLeft = player.offsetLeft/50;
-=======
-  posPlayerTop = player.offsetTop / 50;
-  posPlayerLeft = player.offsetLeft / 50;
->>>>>>> d8346001e5515a91a2c4f22dd8ca5049b8837dff
+    posPlayerTop = player.offsetTop / 50;
+    posPlayerLeft = player.offsetLeft / 50;
 
   if ((e.keyCode === 39) && (player.offsetLeft < map.offsetWidth - player.offsetWidth)) {
     console.log(blockElt[posPlayerTop][posPlayerLeft]);
@@ -61,23 +55,13 @@ document.addEventListener("keydown", function (e) {
       player.style.top = (posPlayerTop - 1) * 50 + "px";
       console.log("coucou");
     }
-<<<<<<< HEAD
-    else if (e.keyCode === 32) {
-        if (autoBomb==0) {
-            autoBomb=1;
-            poseBombe();
-            setTimeout(explode, 3000);
-        }
-=======
   } else if (e.keyCode === 32) {
     if (autoBomb == 0) {
       autoBomb = 1;
       placeBomb();
       setTimeout(explode, 1000);
       autoBomb=0;
->>>>>>> d8346001e5515a91a2c4f22dd8ca5049b8837dff
     }
-      
   }
 });
 
@@ -111,20 +95,13 @@ function placeBomb() {
   bombeElt.style.left = player.offsetLeft + 5.5 + "px";
   map.appendChild(bombeElt);
 
-  
-  
+
+
 }
 
-<<<<<<< HEAD
-function explode(){
-    alert("BOOOM");
-    autoBomb=0;
-    // delete map[][blockWidth  ].object;
-    // player.block++;
-=======
 function explode() {
 
-  bombeElt.classList.remove("bomb"); 
+  bombeElt.classList.remove("bomb");
 
   bombeElt.style.top = bombeElt.offsetTop + 5.5 + "px";
   bombeElt.style.left = bombeElt.offsetLeft + 5.5 + "px";
@@ -133,7 +110,6 @@ function explode() {
   // delete map[][blockWidth  ].object;
   // player.block++;
 
->>>>>>> d8346001e5515a91a2c4f22dd8ca5049b8837dff
 }
 
 blockEltMaker();
@@ -141,7 +117,6 @@ blockEltMaker();
 var monster = document.getElementById("phantom");
 
 function random() {
-<<<<<<< HEAD
     var min = 1;
     var max = 4;
 
@@ -167,33 +142,6 @@ function random() {
             monster.style.top = monster.offsetTop - 50 + "px";
         } //HAUT//
     }
-=======
-  var min = 1;
-  var max = 4;
-
-  var dir = Math.floor(Math.random() * Math.floor(max));
-  var posBlockLeft = monster.offsetLeft / 50;
-  var posBlockTop = monster.offsetTop / 50;
-  console.log(dir == 4);
-  if (dir == 0) {
-    if (blockElt[posBlockTop][posBlockLeft + 1] == 1) {
-      monster.style.left = monster.offsetLeft + 50 + "px";
-    } //DROITE//
-  } else if (dir == 1) {
-    if (blockElt[posBlockTop][posBlockLeft - 1] == 1) {
-      monster.style.left = monster.offsetLeft - 50 + "px";
-    } //GAUCHE//
-  } else if (dir == 3) {
-    if (blockElt[posBlockTop + 1][posBlockLeft] == 1) {
-      monster.style.top = monster.offsetTop + 50 + "px";
-    } //BAS///
-
-  } else if (dir == 2) { //
-    if (blockElt[posBlockTop - 1][posBlockLeft] == 1) {
-      monster.style.top = monster.offsetTop - 50 + "px";
-    } //HAUT//
-  }
->>>>>>> d8346001e5515a91a2c4f22dd8ca5049b8837dff
 }
 
 
