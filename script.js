@@ -31,7 +31,7 @@ var blockElt = [
 
 document.addEventListener("keydown", function(e){
 
-    posPlayerTop = player.offsetTop/50;autoBomb=0;
+    posPlayerTop = player.offsetTop/50;
     posPlayerLeft = player.offsetLeft/50;
 
     if((e.keyCode === 39) && (player.offsetLeft < map.offsetWidth - player.offsetWidth)){
@@ -61,12 +61,11 @@ document.addEventListener("keydown", function(e){
       }
     }
     else if (e.keyCode === 32) {
-      if (autoBomb==0) {autoBomb=0;
-        autoBomb=1;
-        poseBombe();
-        setTimeout(explode, 3000);
-      }
-
+        if (autoBomb==0) {
+            autoBomb=1;
+            poseBombe();
+            setTimeout(explode, 3000);
+        }
     }
 });
 
@@ -107,42 +106,41 @@ function poseBombe(){
 }
 
 function explode(){
-alert("BOOOM");
-autoBomb=0;
-// delete map[][blockWidth  ].object;
-player.block++;
-
+    alert("BOOOM");
+    autoBomb=0;
+    // delete map[][blockWidth  ].object;
+    // player.block++;
 }
 
 blockEltMaker();
 
 var monster = document.getElementById("phantom");
 function random() {
-var min = 1;
-var max = 4;
+    var min = 1;
+    var max = 4;
 
-var dir = Math.floor(Math.random() * Math.floor(max));
-var posBlockLeft = monster.offsetLeft / 50;
-var posBlockTop = monster.offsetTop / 50;
-console.log(dir == 4);
-if (dir == 0) {
-if (blockElt[posBlockTop][posBlockLeft + 1] == 1) {
-monster.style.left = monster.offsetLeft + 50 + "px";
-} //DROITE//
-} else if (dir == 1) {
-if (blockElt[posBlockTop][posBlockLeft - 1] == 1) {
-monster.style.left = monster.offsetLeft - 50 + "px";
-} //GAUCHE//
-} else if (dir == 3) {
-if (blockElt[posBlockTop + 1][posBlockLeft] == 1) {
-monster.style.top = monster.offsetTop + 50 + "px";
-} //BAS///
+    var dir = Math.floor(Math.random() * Math.floor(max));
+    var posBlockLeft = monster.offsetLeft / 50;
+    var posBlockTop = monster.offsetTop / 50;
+    console.log(dir == 4);
+    if (dir == 0) {
+        if (blockElt[posBlockTop][posBlockLeft + 1] == 1) {
+            monster.style.left = monster.offsetLeft + 50 + "px";
+        } //DROITE//
+    } else if (dir == 1) {
+        if (blockElt[posBlockTop][posBlockLeft - 1] == 1) {
+            monster.style.left = monster.offsetLeft - 50 + "px";
+        } //GAUCHE//
+    } else if (dir == 3) {
+        if (blockElt[posBlockTop + 1][posBlockLeft] == 1) {
+            monster.style.top = monster.offsetTop + 50 + "px";
+        } //BAS///
 
-} else if (dir == 2) { //
-if (blockElt[posBlockTop - 1][posBlockLeft] == 1) {
-monster.style.top = monster.offsetTop - 50 + "px";
-} //HAUT//
-}
+    } else if (dir == 2) { //
+        if (blockElt[posBlockTop - 1][posBlockLeft] == 1) {
+            monster.style.top = monster.offsetTop - 50 + "px";
+        } //HAUT//
+    }
 }
 
 
