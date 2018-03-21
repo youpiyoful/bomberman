@@ -26,7 +26,7 @@ var blockElt = [
 [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
-
+blockHeight
 
 
 document.addEventListener("keydown", function(e){
@@ -62,7 +62,9 @@ document.addEventListener("keydown", function(e){
       }
     }
     else if (e.keyCode === 32) {
-      if (autoBomb==0) {autoBomb=0;
+      if (autoBomb==0)  
+      { 
+        autoBomb=0;
         autoBomb=1;
         poseBombe();
         
@@ -71,9 +73,6 @@ document.addEventListener("keydown", function(e){
            
     }
 });
-
-
-
 
 function blockEltMaker(){
   var x = 0;
@@ -119,14 +118,14 @@ player.block++;
 blockEltMaker();
 
 var monster = document.getElementById("phantom");
-function random() {
+function random()
+ {
 var min = 1;
 var max = 4;
 
 var dir = Math.floor(Math.random() * Math.floor(max));
 var posBlockLeft = monster.offsetLeft / 50;
 var posBlockTop = monster.offsetTop / 50;
-console.log(dir);4
 if (dir == 0) {
 if (blockElt[posBlockTop][posBlockLeft + 1] == 1) {
 monster.style.left = monster.offsetLeft + 50 + "px";
