@@ -29,9 +29,10 @@ function placeBomb() {
 }
 
 function explode() {
-  bombeElt.classList.remove("bomb");
-  bombeElt.style.top = bombeElt.offsetTop + 5.5 + "px";
-  bombeElt.style.left = bombeElt.offsetLeft + 5.5 + "px";
+  /*bombeElt.classList.remove("bomb");*/
+  bombeElt.style.backgroundImage = "boom.png";
+/*  bombeElt.style.top = bombeElt.offsetTop + 5.5 + "px";
+  bombeElt.style.left = bombeElt.offsetLeft + 5.5 + "px";*/
   // delete map[posPlayerTop-1][posPlayerLeft];
   // delete map[][blockWidth  ].object;
   // player.block++;
