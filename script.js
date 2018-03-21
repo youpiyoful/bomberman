@@ -21,21 +21,25 @@ function blockEltMaker() {
 }
 
 function placeBomb() {
-    var bombeElt = document.createElement("div");
     bombeElt.classList.add("bomb");
+    bombeElt.style.backgroundImage = "url('bomb.png')";
     bombeElt.style.top = player.offsetTop + 5.5 + "px";
     bombeElt.style.left = player.offsetLeft + 5.5 + "px";
-    map.appendChild(bombeElt);
 }
 
 function explode() {
-  /*bombeElt.classList.remove("bomb");*/
-  bombeElt.style.backgroundImage = "boom.png";
-/*  bombeElt.style.top = bombeElt.offsetTop + 5.5 + "px";
-  bombeElt.style.left = bombeElt.offsetLeft + 5.5 + "px";*/
+/*  bombeElt.classList.remove("bomb");
+  bombeElt.classList.add("boom");*/
+  bombeElt.style.backgroundImage = "url('boom.png')";
+/*  bombeElt.style.top = bombeElt.offsetTop + "px";
+  bombeElt.style.left = bombeElt.offsetLeft + "px";*/
+
   // delete map[posPlayerTop-1][posPlayerLeft];
   // delete map[][blockWidth  ].object;
   // player.block++;
+}
+function remove(){
+  bombeElt.classList.remove("bomb");
 }
 
 function random() {
@@ -66,7 +70,7 @@ function random() {
     }
 }
 
-
+var bombeElt = document.getElementById("bombId");
 var monster = document.getElementById("phantom");
 var player = document.getElementById("player1");
 var map = document.getElementById("container");
@@ -98,7 +102,9 @@ var blockElt = [
 ];
 
 blockEltMaker();
+
 setInterval(random, 200);
+
 document.addEventListener("keydown", function(e) {
     posPlayerTop = player.offsetTop / 50;
     posPlayerLeft = player.offsetLeft / 50;
@@ -130,6 +136,7 @@ document.addEventListener("keydown", function(e) {
             autoBomb = 1;
             placeBomb();
             setTimeout(explode, 1000);
+            setTimeout(remove, 1500);
             autoBomb = 0;
         }
     }
